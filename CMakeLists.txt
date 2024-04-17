@@ -13,6 +13,8 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appBasicApp main.cpp)
 
+add_subdirectory(dialogs)
+
 qt_add_qml_module(
   appBasicApp
   URI
@@ -31,7 +33,7 @@ set_target_properties(
 			 MACOSX_BUNDLE TRUE
 			 WIN32_EXECUTABLE TRUE)
 
-target_link_libraries(appBasicApp PRIVATE Qt6::Quick)
+target_link_libraries(appBasicApp PRIVATE Qt6::Quick dialogsplugin)
 
 qt_generate_deploy_qml_app_script(
   TARGET
